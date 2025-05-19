@@ -1,0 +1,30 @@
+
+--a- Find unique customers
+SELECT COUNT(DISTINCT Customer_ID) AS Unique_Customers
+FROM YourTableName;
+
+--b- How many mobiles were sold?
+SELECT SUM(Quantity) AS Total_Mobiles_Sold
+FROM YourTableName
+WHERE LOWER(Product) LIKE '%mobile%';
+
+
+--c-1- Total sales revenue per country
+SELECT Country, SUM(Quantity * Price) AS Total_Revenue
+FROM YourTableName
+GROUP BY Country
+ORDER BY Total_Revenue DESC;
+
+
+--c-2- Top 5 customers by purchase quantity
+SELECT TOP 5 Customer_ID, SUM(Quantity) AS Total_Quantity
+FROM YourTableName
+GROUP BY Customer_ID
+ORDER BY Total_Quantity DESC;
+
+
+--c-3- Count of orders by each product
+SELECT Product, COUNT(*) AS Number_Of_Orders
+FROM YourTableName
+GROUP BY Product
+ORDER BY Number_Of_Orders DESC;
