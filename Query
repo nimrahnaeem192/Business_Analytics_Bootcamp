@@ -1,19 +1,17 @@
 -- Create the table
 CREATE TABLE AIRBNB_LISTINGS (
-    id NUMBER PRIMARY KEY,
-    city VARCHAR2(100),
-    country VARCHAR2(100),
-    number_of_rooms NUMBER,
-    year_listed NUMBER
+    id INT PRIMARY KEY,
+    city VARCHAR(100),
+    country VARCHAR(100),
+    number_of_rooms INT,
+    year_listed INT
 );
-DESC AIRBNB_LISTINGS;
+
 -- Insert the data
 INSERT INTO AIRBNB_LISTINGS (id, city, country, number_of_rooms, year_listed) VALUES
 (1, 'Karachi', 'Pakistan', 3, 2025),
 (2, 'Paris', 'France', 5, 2018),
 (3, 'Tokyo', 'Japan', 2, 2017),
 (4, 'New York', 'USA', 2, 2022),
-(5, 'Shanghai', 'China', 4, 2019),
+(5, 'Shanghai', 'China', 4, 2019);
 
-
-SELECT * FROM AIRBNB_LISTINGS;
